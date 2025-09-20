@@ -234,31 +234,31 @@
 
         /* Expense Categories */
         .expense-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 20px;
-}
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .expense-card {
+            background-color: rgb(29, 28, 28);
+            border: 2px solid #FFD700;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
 
-    .expense-card {
-    background-color: rgb(29, 28, 28); /* A very dark grey background */
-    border: 2px solid #FFD700;        /* Yellow border as seen in the image */
-    border-radius: 10px;              /* Rounded corners */
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effects */
-}
-
-      
         option{
             background-color: rgb(29, 28, 28);
             color: #FFD700;
         }
 
         .expense-card:hover {
-    transform: translateY(-5px);    /* Moves the card up slightly */
-    border-color: #FFA500;          /* Changes border color to orange */
-    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.2); /* Adds a light shadow glow */
-}
+            transform: translateY(-5px);
+            border-color: #FFA500;
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.2);
+        }
 
         .expense-icon {
             font-size: 3rem;
@@ -583,7 +583,6 @@
     </style>
 </head>
 <body>
-    <!-- ONLY FIX: Move script to head to ensure functions load before HTML -->
     <script>
         // Global variables
         let currentUser = null;
@@ -663,7 +662,6 @@
 
     <div class="container">
         <div class="main-content">
-            <!-- Login Section -->
             <div class="login-section" id="loginSection">
                 <h2><i class="fas fa-user-circle"></i> Student Login</h2>
                 <div id="loginMessage"></div>
@@ -700,7 +698,6 @@
                 </div>
             </div>
 
-            <!-- Dashboard Section -->
             <div class="dashboard-section hidden" id="dashboardSection">
                 <div class="tab-nav">
                     <button class="tab-btn active" onclick="showTab('balance')">
@@ -720,7 +717,6 @@
                     </button>
                 </div>
 
-                <!-- Balance Tab -->
                 <div id="balance-tab" class="tab-content active">
                     <div class="card">
                         <h3><i class="fas fa-coins"></i> Current Balance</h3>
@@ -758,39 +754,37 @@
                     </div>
                 </div>
 
-                <!-- Expenses Tab -->
                 <div id="expenses-tab" class="tab-content">
-    <div class="card">
-        <h3><i class="fas fa-chart-pie"></i> Expense Categories</h3>
-        <div class="expense-grid" id="expenseGrid">
-            <div class="expense-card" onclick="showExpenseDetails('food')">
-                <div class="expense-icon"><i class="fas fa-utensils"></i></div>
-                <div class="expense-amount" id="food-amount">₹0</div>
-                <div class="expense-label">Food</div>
-            </div>
-            <div class="expense-card" onclick="showExpenseDetails('shopping')">
-                <div class="expense-icon"><i class="fas fa-shopping-bag"></i></div>
-                <div class="expense-amount" id="shopping-amount">₹0</div>
-                <div class="expense-label">Shopping</div>
-            </div>
-            <div class="expense-card" onclick="showExpenseDetails('friends')">
-                <div class="expense-icon"><i class="fas fa-users"></i></div>
-                <div class="expense-amount" id="friends-amount">₹0</div>
-                <div class="expense-label">Friends</div>
-            </div>
-            <div class="expense-card" onclick="showExpenseDetails('weekend')">
-                <div class="expense-icon"><i class="fas fa-glass-cheers"></i></div>
-                <div class="expense-amount" id="weekend-amount">₹0</div>
-                <div class="expense-label">Weekend Outing</div>
-            </div>
-            <div class="expense-card" onclick="showExpenseDetails('social')">
-                <div class="expense-icon"><i class="fas fa-hands-helping"></i></div>
-                <div class="expense-amount" id="social-amount">₹0</div>
-                <div class="expense-label">Social Service</div>
-            </div>
-        </div>
-    </div>
-</div>
+                    <div class="card">
+                        <h3><i class="fas fa-chart-pie"></i> Expense Categories</h3>
+                        <div class="expense-grid" id="expenseGrid">
+                            <div class="expense-card" onclick="showExpenseDetails('food')">
+                                <div class="expense-icon"><i class="fas fa-utensils"></i></div>
+                                <div class="expense-amount" id="food-amount">₹0</div>
+                                <div class="expense-label">Food</div>
+                            </div>
+                            <div class="expense-card" onclick="showExpenseDetails('shopping')">
+                                <div class="expense-icon"><i class="fas fa-shopping-bag"></i></div>
+                                <div class="expense-amount" id="shopping-amount">₹0</div>
+                                <div class="expense-label">Shopping</div>
+                            </div>
+                            <div class="expense-card" onclick="showExpenseDetails('friends')">
+                                <div class="expense-icon"><i class="fas fa-users"></i></div>
+                                <div class="expense-amount" id="friends-amount">₹0</div>
+                                <div class="expense-label">Friends</div>
+                            </div>
+                            <div class="expense-card" onclick="showExpenseDetails('weekend')">
+                                <div class="expense-icon"><i class="fas fa-calendar-weekend"></i></div>
+                                <div class="expense-amount" id="weekend-amount">₹0</div>
+                                <div class="expense-label">Weekend Outing</div>
+                            </div>
+                            <div class="expense-card" onclick="showExpenseDetails('social')">
+                                <div class="expense-icon"><i class="fas fa-hands-helping"></i></div>
+                                <div class="expense-amount" id="social-amount">₹0</div>
+                                <div class="expense-label">Social Service</div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="card">
                         <h3><i class="fas fa-plus"></i> Add Expense</h3>
@@ -811,7 +805,6 @@
                     </div>
                 </div>
 
-                <!-- Reminders Tab -->
                 <div id="reminders-tab" class="tab-content">
                     <div class="card">
                         <h3><i class="fas fa-bell"></i> Weekly Spending Summary</h3>
@@ -825,12 +818,10 @@
                     <div class="card">
                         <h3><i class="fas fa-chart-bar"></i> Spending Analysis</h3>
                         <div id="spendingAnalysis">
-                            <!-- Spending analysis will be populated here -->
-                        </div>
+                            </div>
                     </div>
                 </div>
 
-                <!-- Notes Tab -->
                 <div id="notes-tab" class="tab-content">
                     <div class="card">
                         <h3><i class="fas fa-sticky-note"></i> Personal Notes</h3>
@@ -843,7 +834,6 @@
                     </div>
                 </div>
 
-                <!-- AI Support Tab -->
                 <div id="ai-support-tab" class="tab-content">
                     <div class="card">
                         <h3><i class="fas fa-robot"></i> AI Financial Assistant</h3>
@@ -866,7 +856,6 @@
         </div>
     </div>
 
-    <!-- Expense History Modal -->
     <div id="expenseHistoryModal" class="expense-history-modal">
         <div class="expense-history-content">
             <div class="modal-header">
@@ -876,8 +865,7 @@
                 </button>
             </div>
             <div id="modalContent">
-                <!-- Content will be populated by JavaScript -->
-            </div>
+                </div>
         </div>
     </div>
 
@@ -936,384 +924,189 @@
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
-            
-            // Show selected tab
+
+            // Show selected tab content and add active class to button
             document.getElementById(`${tabName}-tab`).classList.add('active');
-            
-            // Add active class to clicked button
             event.target.classList.add('active');
+
+            if (tabName === 'reminders') {
+                updateReminders();
+                updateSpendingAnalysis();
+            }
         }
 
-        // Add expense - FIXED VERSION
+        // Add Income
+        function addIncome() {
+            const amount = parseFloat(document.getElementById('incomeAmount').value);
+            if (isNaN(amount) || amount <= 0) {
+                alert('Please enter a valid amount.');
+                return;
+            }
+
+            userData.balance += amount;
+            userData.transactions.push({
+                type: 'income',
+                amount: amount,
+                date: new Date().toLocaleDateString(),
+                description: `Added income from ${document.getElementById('incomeSource').value}`
+            });
+
+            localStorage.setItem('finhigh_data', JSON.stringify(userData));
+            updateDisplay();
+            document.getElementById('incomeAmount').value = '';
+            alert('Income added successfully!');
+        }
+
+        // Add Expense
         function addExpense() {
             const amount = parseFloat(document.getElementById('expenseAmount').value);
             const category = document.getElementById('expenseCategory').value;
-            const description = document.getElementById('expenseDescription').value.trim();
+            const description = document.getElementById('expenseDescription').value || 'No description';
 
-            if (!amount || amount <= 0) {
-                alert('Please enter a valid amount');
+            if (isNaN(amount) || amount <= 0) {
+                alert('Please enter a valid amount.');
                 return;
             }
 
-            if (amount > userData.balance) {
-                alert('Insufficient balance!');
+            if (userData.balance < amount) {
+                alert('Insufficient balance.');
                 return;
             }
 
-            // Update data
             userData.balance -= amount;
             userData.totalSpent += amount;
             userData.expenses[category] += amount;
-
-            // Add transaction with proper details
             userData.transactions.push({
-                id: Date.now(),
                 type: 'expense',
-                category: category,
                 amount: amount,
-                description: description || 'No description provided',
-                date: new Date().toISOString(),
-                displayDate: new Date().toLocaleDateString('en-IN', {
-                    day: 'numeric',
-                    month: 'long', 
-                    year: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit'
-                })
+                category: category,
+                date: new Date().toLocaleDateString(),
+                description: description
             });
 
-            // Save data
             localStorage.setItem('finhigh_data', JSON.stringify(userData));
-            
-            // Clear form
+            updateDisplay();
             document.getElementById('expenseAmount').value = '';
             document.getElementById('expenseDescription').value = '';
-            
-            // Update display
-            updateDisplay();
-            
-            alert(`₹${amount} expense added to ${category}!`);
+            alert('Expense added successfully!');
         }
 
-        // Add income
-        function addIncome() {
-            const amount = parseFloat(document.getElementById('incomeAmount').value);
-            const source = document.getElementById('incomeSource').value;
-
-            if (!amount || amount <= 0) {
-                alert('Please enter a valid amount');
-                return;
-            }
-
-            // Split income: 50% to savings, 50% to balance
-            const toSavings = amount / 2;
-            const toBalance = amount / 2;
-
-            userData.savings += toSavings;
-            userData.balance += toBalance;
-
-            // Add transaction
-            userData.transactions.push({
-                id: Date.now(),
-                type: 'income',
-                source: source,
-                amount: amount,
-                date: new Date().toISOString(),
-                displayDate: new Date().toLocaleDateString('en-IN', {
-                    day: 'numeric',
-                    month: 'long', 
-                    year: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit'
-                })
-            });
-
-            // Save data
+        // Save notes
+        function saveNotes() {
+            userData.notes = document.getElementById('personalNotes').value;
             localStorage.setItem('finhigh_data', JSON.stringify(userData));
-            
-            // Clear form
-            document.getElementById('incomeAmount').value = '';
-            
-            // Update display
-            updateDisplay();
-            
-            alert(`₹${amount} income added! ₹${toSavings} saved, ₹${toBalance} available for spending.`);
+            alert('Notes saved successfully!');
         }
 
-        // FIXED: Show expense details in modal
+        // Show expense details modal
         function showExpenseDetails(category) {
             const modal = document.getElementById('expenseHistoryModal');
             const modalTitle = document.getElementById('modalTitle');
             const modalContent = document.getElementById('modalContent');
             
-            // Get category info
-            const categoryData = categoryInfo[category];
-            const totalAmount = userData.expenses[category] || 0;
+            const categoryLabel = categoryInfo[category].label;
+            const categoryIcon = categoryInfo[category].icon;
+            const totalSpent = userData.expenses[category].toFixed(2);
             
-            // Filter transactions for this category
-            const categoryTransactions = userData.transactions.filter(t => 
-                t.category === category && t.type === 'expense'
-            );
-            
-            // Sort by date (newest first)
-            categoryTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
-            
-            // Set modal title
-            modalTitle.innerHTML = `<i class="${categoryData.icon}"></i> ${categoryData.label} History`;
-            
-            // Build modal content
-            let content = `
-                <div class="category-summary">
-                    <div class="category-icon-large">
-                        <i class="${categoryData.icon}"></i>
-                    </div>
-                    <div class="category-total">₹${totalAmount.toFixed(2)}</div>
-                    <div class="category-name">${categoryData.label}</div>
-                    <div style="margin-top: 10px; color: #FFA500;">
-                        Total Transactions: ${categoryTransactions.length}
-                    </div>
-                </div>
-                
-                <h4 style="color: #FFD700; margin: 20px 0 15px 0; border-bottom: 1px solid #FFD700; padding-bottom: 10px;">
-                    <i class="fas fa-history"></i> Transaction History
-                </h4>
-            `;
-            
-            if (categoryTransactions.length > 0) {
-                categoryTransactions.forEach(transaction => {
-                    content += `
+            modalTitle.innerHTML = `<i class="${categoryIcon}"></i> ${categoryLabel} History`;
+
+            let transactionsHTML = `<div class="category-summary">
+                <div class="category-icon-large"><i class="${categoryIcon}"></i></div>
+                <div class="category-total">₹${totalSpent}</div>
+                <div class="category-name">${categoryLabel}</div>
+            </div>`;
+
+            const filteredTransactions = userData.transactions.filter(t => t.type === 'expense' && t.category === category);
+
+            if (filteredTransactions.length > 0) {
+                filteredTransactions.forEach(t => {
+                    transactionsHTML += `
                         <div class="transaction-item">
-                            <div class="transaction-amount">
-                                <i class="fas fa-minus-circle" style="color: #ff6b6b; margin-right: 8px;"></i>
-                                ₹${transaction.amount.toFixed(2)}
-                            </div>
-                            <div class="transaction-description">
-                                <i class="fas fa-comment-alt" style="margin-right: 8px; color: #FFA500;"></i>
-                                ${transaction.description}
-                            </div>
-                            <div class="transaction-date">
-                                <i class="fas fa-calendar" style="margin-right: 8px;"></i>
-                                ${transaction.displayDate}
-                            </div>
+                            <div class="transaction-amount">₹${t.amount.toFixed(2)}</div>
+                            <div class="transaction-description">${t.description}</div>
+                            <div class="transaction-date">${t.date}</div>
                         </div>
                     `;
                 });
-                
-                // Add summary stats
-                const avgAmount = totalAmount / categoryTransactions.length;
-                content += `
-                    <div style="margin-top: 30px; padding: 20px; background: rgba(255, 215, 0, 0.1); border-radius: 15px; border: 1px solid #FFD700;">
-                        <h5 style="color: #FFD700; margin-bottom: 15px;">
-                            <i class="fas fa-chart-bar"></i> Quick Stats
-                        </h5>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; text-align: center;">
-                            <div>
-                                <div style="font-size: 1.2rem; color: #FFD700; font-weight: bold;">₹${avgAmount.toFixed(2)}</div>
-                                <div style="color: #FFA500; font-size: 0.9rem;">Avg per transaction</div>
-                            </div>
-                            <div>
-                                <div style="font-size: 1.2rem; color: #FFD700; font-weight: bold;">${categoryTransactions.length}</div>
-                                <div style="color: #FFA500; font-size: 0.9rem;">Total transactions</div>
-                            </div>
-                            <div>
-                                <div style="font-size: 1.2rem; color: #FFD700; font-weight: bold;">₹${totalAmount.toFixed(2)}</div>
-                                <div style="color: #FFA500; font-size: 0.9rem;">Total spent</div>
-                            </div>
-                        </div>
-                    </div>
-                `;
             } else {
-                content += `
-                    <div class="no-transactions">
-                        <i class="fas fa-inbox" style="font-size: 3rem; color: #FFA500; margin-bottom: 15px;"></i>
-                        <p>No transactions yet in this category.</p>
-                        <p style="margin-top: 10px; font-size: 0.9rem;">Start adding expenses to see your transaction history!</p>
-                    </div>
-                `;
+                transactionsHTML += `<p class="no-transactions">No expenses recorded for this category yet.</p>`;
             }
-            
-            modalContent.innerHTML = content;
+
+            modalContent.innerHTML = transactionsHTML;
             modal.style.display = 'block';
-            
-            // Add click outside to close
-            modal.onclick = function(event) {
-                if (event.target === modal) {
-                    closeExpenseModal();
-                }
-            };
         }
 
-        // Close expense modal
+        // Close modal
         function closeExpenseModal() {
             document.getElementById('expenseHistoryModal').style.display = 'none';
-        }
-
-        // Save notes
-        function saveNotes() {
-            const notes = document.getElementById('personalNotes').value;
-            userData.notes = notes;
-            localStorage.setItem('finhigh_data', JSON.stringify(userData));
-            alert('Notes saved successfully!');
         }
 
         // Update reminders
         function updateReminders() {
             const remindersDiv = document.getElementById('weeklyReminders');
-            let reminders = [];
-
-            const totalWeeklySpending = userData.totalSpent;
+            const totalSpent = userData.totalSpent;
+            const allowance = currentUser ? currentUser.allowance : 0;
+            let message = '';
             
-            if (totalWeeklySpending > 0) {
-                Object.keys(userData.expenses).forEach(category => {
-                    const amount = userData.expenses[category];
-                    if (amount > 0) {
-                        const percentage = ((amount / totalWeeklySpending) * 100).toFixed(1);
-                        reminders.push(`
-                            <div class="card" style="margin-bottom: 15px;">
-                                <p><strong>${category.charAt(0).toUpperCase() + category.slice(1)}:</strong> ₹${amount.toFixed(2)} (${percentage}% of total spending)</p>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: ${percentage}%"></div>
-                                </div>
-                            </div>
-                        `);
-                    }
-                });
-            }
+            if (allowance > 0) {
+                const spendingPercentage = (totalSpent / allowance) * 100;
 
-            if (reminders.length > 0) {
-                remindersDiv.innerHTML = `
-                    <h4 style="color: #FFD700; margin-bottom: 20px;"><i class="fas fa-chart-line"></i> This Week's Spending Breakdown:</h4>
-                    ${reminders.join('')}
-                `;
+                if (spendingPercentage > 75) {
+                    message = `<div class="message error">
+                        <i class="fas fa-exclamation-triangle"></i> You have spent ${spendingPercentage.toFixed(2)}% of your allowance! Please manage your expenses carefully.
+                    </div>`;
+                } else if (spendingPercentage > 50) {
+                    message = `<div class="message">
+                        <i class="fas fa-info-circle"></i> You are halfway through your allowance. Keep an eye on your spending!
+                    </div>`;
+                } else {
+                    message = `<div class="message success">
+                        <i class="fas fa-check-circle"></i> Your spending is on track. Great job!
+                    </div>`;
+                }
             } else {
-                remindersDiv.innerHTML = `
-                    <p style="color: #FFA500; text-align: center; padding: 20px;">
-                        <i class="fas fa-info-circle"></i> No spending recorded yet. Start adding expenses to see your weekly summary!
-                    </p>
-                `;
+                message = `<p style="color: #FFA500; text-align: center; padding: 20px;">
+                    <i class="fas fa-info-circle"></i> Reminders will appear here based on your spending patterns
+                </p>`;
             }
+            remindersDiv.innerHTML = message;
         }
 
         // Update spending analysis
         function updateSpendingAnalysis() {
             const analysisDiv = document.getElementById('spendingAnalysis');
-            const totalBudget = currentUser ? currentUser.allowance : 0;
-            const spentPercentage = totalBudget > 0 ? ((userData.totalSpent / totalBudget) * 100).toFixed(1) : 0;
+            const totalSpent = userData.totalSpent;
+            let analysisHTML = '';
 
-            let analysis = '';
-            let alertClass = '';
-            let alertIcon = '';
-
-            if (spentPercentage < 50) {
-                analysis = "Great job! You're managing your budget well. Keep tracking your expenses.";
-                alertClass = 'success';
-                alertIcon = 'fas fa-check-circle';
-            } else if (spentPercentage < 75) {
-                analysis = "You're on track, but consider monitoring your spending more closely.";
-                alertClass = 'warning';
-                alertIcon = 'fas fa-exclamation-triangle';
+            if (totalSpent > 0) {
+                Object.keys(userData.expenses).forEach(category => {
+                    const categorySpent = userData.expenses[category];
+                    const percentage = (categorySpent / totalSpent) * 100;
+                    if (categorySpent > 0) {
+                        analysisHTML += `
+                            <div style="margin-bottom: 10px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="font-weight: bold; color: #FFA500;">
+                                        <i class="${categoryInfo[category].icon}"></i> ${categoryInfo[category].label}
+                                    </span>
+                                    <span>₹${categorySpent.toFixed(2)} (${percentage.toFixed(0)}%)</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: ${percentage.toFixed(0)}%;"></div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                });
             } else {
-                analysis = "Warning: You've spent a significant portion of your budget. Consider reducing expenses.";
-                alertClass = 'error';
-                alertIcon = 'fas fa-exclamation-circle';
+                analysisHTML = `<p class="no-transactions">No expenses to analyze yet.</p>`;
             }
-
-            analysisDiv.innerHTML = `
-                <div class="message ${alertClass}">
-                    <i class="${alertIcon}"></i> ${analysis}
-                </div>
-                <div style="margin-top: 20px;">
-                    <p><strong>Budget Utilization:</strong></p>
-                    <div class="progress-bar" style="height: 30px;">
-                        <div class="progress-fill" style="width: ${spentPercentage}%"></div>
-                    </div>
-                    <p style="text-align: center; margin-top: 10px; color: #FFD700;">
-                        ${spentPercentage}% of monthly allowance used
-                    </p>
-                </div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 20px;">
-                    <div style="text-align: center; padding: 15px; background: rgba(255, 215, 0, 0.1); border-radius: 10px;">
-                        <div style="font-size: 1.5rem; color: #FFD700;">₹${totalBudget}</div>
-                        <div style="color: #FFA500; font-size: 0.9rem;">Monthly Allowance</div>
-                    </div>
-                    <div style="text-align: center; padding: 15px; background: rgba(255, 215, 0, 0.1); border-radius: 10px;">
-                        <div style="font-size: 1.5rem; color: #FFD700;">₹${userData.totalSpent.toFixed(2)}</div>
-                        <div style="color: #FFA500; font-size: 0.9rem;">Total Spent</div>
-                    </div>
-                    <div style="text-align: center; padding: 15px; background: rgba(255, 215, 0, 0.1); border-radius: 10px;">
-                        <div style="font-size: 1.5rem; color: #FFD700;">₹${userData.savings.toFixed(2)}</div>
-                        <div style="color: #FFA500; font-size: 0.9rem;">Savings</div>
-                    </div>
-                </div>
-            `;
+            analysisDiv.innerHTML = analysisHTML;
         }
 
-        // AI Chat functionality
-        function sendMessage() {
-            const input = document.getElementById('chatInput');
-            const message = input.value.trim();
-            
-            if (!message) return;
-            
-            const messagesDiv = document.getElementById('chatMessages');
-            
-            // Add user message
-            messagesDiv.innerHTML += `
-                <div style="margin-bottom: 15px; text-align: right;">
-                    <div style="background: #FFD700; color: black; padding: 10px; border-radius: 15px; display: inline-block; max-width: 70%;">
-                        <strong>You:</strong> ${message}
-                    </div>
-                </div>
-            `;
-            
-            // Clear input
-            input.value = '';
-            
-            // Simulate AI response
-            setTimeout(() => {
-                const response = generateAIResponse(message);
-                messagesDiv.innerHTML += `
-                    <div style="margin-bottom: 15px;">
-                        <div style="background: rgba(255, 215, 0, 0.2); color: white; padding: 10px; border-radius: 15px; display: inline-block; max-width: 70%; border: 1px solid #FFD700;">
-                            <i class="fas fa-robot"></i> <strong>FINHIGH AI:</strong> ${response}
-                        </div>
-                    </div>
-                `;
-                messagesDiv.scrollTop = messagesDiv.scrollHeight;
-            }, 1000);
-            
-            messagesDiv.scrollTop = messagesDiv.scrollHeight;
-        }
-
-        // Generate AI responses
-        function generateAIResponse(message) {
-            const lowerMessage = message.toLowerCase();
-            
-            if (lowerMessage.includes('budget') || lowerMessage.includes('money')) {
-                return `Based on your current spending of ₹${userData.totalSpent.toFixed(2)}, I recommend creating a weekly budget breakdown. You have ₹${userData.balance.toFixed(2)}                                                                                                          ing this month.`;
-            }
-            
-            if (lowerMessage.includes('save') || lowerMessage.includes('saving')) {
-                return `You currently have ₹${userData.savings.toFixed(2)} in savings. Try to save at least 20% of any extra income you earn. The 50/30/20 rule works well: 50% needs, 30% wants, 20% savings.`;
-            }
-            
-            if (lowerMessage.includes('expense') || lowerMessage.includes('spend')) {
-                const highestCategory = Object.keys(userData.expenses).reduce((a, b) => 
-                    userData.expenses[a] > userData.expenses[b] ? a : b
-                );
-                return `Your highest spending category is ${highestCategory} at ₹${userData.expenses[highestCategory].toFixed(2)}. Consider tracking daily expenses in this category to better manage costs.`;
-            }
-            
-            if (lowerMessage.includes('food')) {
-                return `Food expenses: ₹${userData.expenses.food.toFixed(2)}. Tip: Try meal planning and cooking at home to reduce food costs. Set a weekly food budget and stick to it!`;
-            }
-            
-            return `I understand you're asking about "${message}". As your financial assistant, I recommend reviewing your spending patterns regularly. Your current balance is ₹${userData.balance.toFixed(2)} and you've saved ₹${userData.savings.toFixed(2)} so far. What specific financial goal would you like to work on?`;
-        }
-
-        // Logout functionality
+        // Logout
         function logout() {
-            if (confirm('Are you sure you want to logout?')) {
+            if (confirm('Are you sure you want to log out? All your data will be cleared.')) {
                 localStorage.removeItem('finhigh_user');
                 localStorage.removeItem('finhigh_data');
                 location.reload();
